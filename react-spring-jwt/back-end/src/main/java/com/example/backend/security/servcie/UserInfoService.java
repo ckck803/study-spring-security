@@ -19,12 +19,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserInfoService implements UserDetailsService {
 
+
     private final UserInfoRepository userInfoRepository;
     private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<UserInfo> userInfoOptional =  userInfoRepository.findByEmail(email);
+
 
         if(userInfoOptional.isPresent()){
             UserInfo userInfo = userInfoOptional.get();
