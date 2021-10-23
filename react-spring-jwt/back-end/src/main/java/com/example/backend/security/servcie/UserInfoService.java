@@ -17,10 +17,10 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UserInfoService implements UserDetailsService {
-
+public class UserInfoUserDetailsService implements UserDetailsService {
 
     private final UserInfoRepository userInfoRepository;
+
     private final PasswordEncoder passwordEncoder;
 
     @Override
